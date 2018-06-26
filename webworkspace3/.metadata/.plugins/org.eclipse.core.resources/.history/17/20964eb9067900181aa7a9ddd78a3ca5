@@ -1,0 +1,30 @@
+package org.kh.student.model.dao;
+
+import org.kh.student.model.vo.Student;
+
+public class StudentDAOImpl implements StudentDAO{
+
+	@Override
+	public Student selectStudent() {
+		return null;
+	}
+
+	@Override
+	public int insertStudent() {
+		return 0;
+	}
+	
+	public void getSqlSession() {		// 기존 getConnection과 같음
+		// getSqlSession 메소드의 역할은
+		// DB에 연결할 JDBC연결 코드를 통하여 연결하는 세션 정보를
+		// 리턴해 주는 역할
+	}
+	
+}
+// JDBC 기존 코드
+
+/*
+맛보기 이므로 
+데이터를 입력 받아서 넣는 것이 아닌
+미리 쿼리 구문을 작성하고 처리되는지를 보도록 함
+*/

@@ -1,0 +1,30 @@
+package org.kh.student.model.dao;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.kh.student.model.vo.Student;
+
+public class StudentDAOImpl implements StudentDAO{
+
+	@Override
+	public Student selectStudent() {
+		return null;
+	}
+
+	@Override
+	public int insertStudent() {
+		SqlSession session = getSqlSession();
+		// getSqlSession메소드를 통해 SqlSession 값을 리턴
+		int result = new StudentDAOImpl().insertStudent(session);
+		return 0;
+	}
+	
+	public SqlSession getSqlSession() {	
+	}
+	
+}

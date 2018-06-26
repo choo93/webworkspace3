@@ -1,0 +1,47 @@
+package org.kh.student.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.kh.student.model.service.StudentServiceImpl;
+import org.kh.student.model.vo.Student;
+
+@WebServlet(name = "MybatisTest3", urlPatterns = { "/mybatisTest3" })
+public class MybatisTest3Servlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public MybatisTest3Servlet() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		String name = request.getParameter("studentName");
+		String tel = request.getParameter("studentTel");
+		String email = request.getParameter("studentEmail");
+		String addr = request.getParameter("studnetAddr");
+		Student st = new Student();
+		st.setStudentName(name);
+		st.setStudentAddr(addr);
+		st.setStudentEmail(email);
+		st.setStudentTel(tel);
+		
+		int result = new StudentServiceImpl().insertStudent(st);
+		
+		if(result>0) {
+			response.getWriter().println("정상처리 되었습니다.");
+		}else {
+			response.getWriter().println("실패 되었습니다.");
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}
