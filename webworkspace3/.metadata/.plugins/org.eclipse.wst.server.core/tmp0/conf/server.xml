@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\webworkspace3\mybatis01\WebContent" path="" reloadable="true" source="org.eclipse.jst.jee.server:mybatis01"><Resources><PreResources base="C:\webworkspace3\mybatis01\build\classes" classLoaderOnly="false" className="org.apache.catalina.webresources.DirResourceSet" internalPath="/" webAppMount="/WEB-INF/classes"/></Resources></Context></Host>
+      <Context docBase="C:\webworkspace3\mybatis_practice\WebContent" path="" reloadable="true" source="org.eclipse.jst.jee.server:mybatis_practice"><Resources><PreResources base="C:\webworkspace3\mybatis_practice\build\classes" classLoaderOnly="false" className="org.apache.catalina.webresources.DirResourceSet" internalPath="/" webAppMount="/WEB-INF/classes"/></Resources></Context></Host>
     </Engine>
   </Service>
 </Server>

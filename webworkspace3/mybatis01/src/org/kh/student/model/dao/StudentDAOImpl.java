@@ -1,12 +1,9 @@
 package org.kh.student.model.dao;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.kh.student.model.vo.Student;
 
 public class StudentDAOImpl implements StudentDAO{
@@ -31,6 +28,26 @@ public class StudentDAOImpl implements StudentDAO{
 	public int insertStudent(SqlSession session, Student st) {
 		int result = session.insert("student.test3", st);
 		return result;
+	}
+
+	public int updateStudent(SqlSession session, Student st) {
+		int result = session.update("student.test4", st);
+		return result;
+	}
+
+	public int deleteStudent(SqlSession session, int studentNo) {
+		int result = session.update("student.test5", studentNo);
+		return result;
+	}
+
+	public Student selectOneStudent(SqlSession session, int studentNo) {
+		Student st = session.selectOne("student.test6",studentNo);
+		return st;
+	}
+
+	public ArrayList<Student> selectAllStudent(SqlSession session) {
+		List list = session.selectList("student.test7");
+		return (ArrayList<Student>)list;
 	}
 
 }
